@@ -1,0 +1,344 @@
+1.1 MATHEMATICAL MODELS AS TOOLS IN ANALYSIS AND DESIGN
+The design or modification of any complex system involves the making of choices from
+various feasible alternatives. Choices are made on the basis of criteria such as cost, reliability,
+and performance.The quantitative evaluation of these criteria is seldom made
+through the actual implementation and experimental evaluation of the alternative configurations.
+Instead, decisions are made based on estimates that are obtained using
+models of the alternatives.
+A model is an approximate representation of a physical situation. A model attempts
+to explain observed behavior using a set of simple and understandable rules.
+These rules can be used to predict the outcome of experiments involving the given
+physical situation. A useful model explains all relevant aspects of a given situation.
+Such models can be used instead of experiments to answer questions regarding the
+given situation. Models therefore allow the engineer to avoid the costs of experimentation,
+namely, labor, equipment, and time.
+Mathematical models are used when the observational phenomenon has measurable
+properties. A mathematical model consists of a set of assumptions about how a
+system or physical process works. These assumptions are stated in the form of mathematical
+relations involving the important parameters and variables of the system. The
+conditions under which an experiment involving the system is carried out determine the
+¡°givens¡± in the mathematical relations, and the solution of these relations allows us to
+predict the measurements that would be obtained if the experiment were performed.
+Mathematical models are used extensively by engineers in guiding system design
+and modification decisions. Intuition and rules of thumb are not always reliable in predicting
+the performance of complex and novel systems, and experimentation is not possible
+during the initial phases of a system design. Furthermore, the cost of extensive
+experimentation in existing systems frequently proves to be prohibitive.The availability
+of adequate models for the components of a complex system combined with a
+knowledge of their interactions allows the scientist and engineer to develop an overall
+mathematical model for the system. It is then possible to quickly and inexpensively answer
+questions about the performance of complex systems. Indeed, computer programs
+for obtaining the solution of mathematical models form the basis of many
+computer-aided analysis and design systems.
+In order to be useful, a model must fit the facts of a given situation.Therefore the
+process of developing and validating a model necessarily consists of a series of experiments
+and model modifications as shown in Fig. 1.1. Each experiment investigates a
+certain aspect of the phenomenon under investigation and involves the taking of observations
+and measurements under a specified set of conditions. The model is used
+to predict the outcome of the experiment, and these predictions are compared with
+the actual observations that result when the experiment is carried out. If there is a
+significant discrepancy, the model is then modified to account for it. The modeling
+process continues until the investigator is satisfied that the behavior of all relevant aspects
+of the phenomenon can be predicted to within a desired accuracy. It should be
+emphasized that the decision of when to stop the modeling process depends on the immediate
+objectives of the investigator. Thus a model that is adequate for one application
+may prove to be completely inadequate in another setting.
+The predictions of a mathematical model should be treated as hypothetical until
+the model has been validated through a comparison with experimental measurements.
+A dilemma arises in a system design situation: The model cannot be validated
+experimentally because the real system does not exist. Computer simulation models
+play a useful role in this situation by presenting an alternative means of predicting system
+behavior, and thus a means of checking the predictions made by a mathematical
+model.A computer simulation model consists of a computer program that simulates or
+mimics the dynamics of a system. Incorporated into the program are instructions that
+¡°measure¡± the relevant performance parameters. In general, simulation models are
+capable of representing systems in greater detail than mathematical models. However,
+they tend to be less flexible and usually require more computation time than mathematical
+models.
+In the following two sections we discuss the two basic types of mathematical
+models, deterministic models and probability models.
+
+1.2 DETERMINISTIC MODELS
+In deterministic models the conditions under which an experiment is carried out determine
+the exact outcome of the experiment. In deterministic mathematical models, the
+solution of a set of mathematical equations specifies the exact outcome of the experiment.
+Circuit theory is an example of a deterministic mathematical model.
+Circuit theory models the interconnection of electronic devices by ideal circuits
+that consist of discrete components with idealized voltage-current characteristics. The
+theory assumes that the interaction between these idealized components is completely
+described by Kirchhoff¡¯s voltage and current laws. For example, Ohm¡¯s law states that
+the voltage-current characteristic of a resistor is The voltages and currents in
+any circuit consisting of an interconnection of batteries and resistors can be found by
+solving a system of simultaneous linear equations that is found by applying Kirchhoff¡¯s
+laws and Ohm¡¯s law.
+If an experiment involving the measurement of a set of voltages is repeated a
+number of times under the same conditions, circuit theory predicts that the observations
+will always be exactly the same. In practice there will be some variation in the observations
+due to measurement errors and uncontrolled factors. Nevertheless, this
+deterministic model will be adequate as long as the deviation about the predicted values
+remains small.
+
+1.3 PROBABILITY MODELS
+Many systems of interest involve phenomena that exhibit unpredictable variation and
+randomness.We define a random experiment to be an experiment in which the outcome
+varies in an unpredictable fashion when the experiment is repeated under the
+same conditions. Deterministic models are not appropriate for random experiments
+since they predict the same outcome for each repetition of an experiment. In this section
+we introduce probability models that are intended for random experiments.
+As an example of a random experiment, suppose a ball is selected from an urn
+containing three identical balls, labeled 0, 1, and 2.The urn is first shaken to randomize
+the position of the balls, and a ball is then selected.The number of the ball is noted,
+and the ball is then returned to the urn. The outcome of this experiment is a number
+from the set We call the set S of all possible outcomes the sample space.
+Figure 1.2 shows the outcomes in 100 repetitions (trials) of a computer simulation of
+this urn experiment. It is clear that the outcome of this experiment cannot consistently
+be predicted correctly.
+
+1.3.1 Statistical Regularity
+In order to be useful, a model must enable us to make predictions about the future behavior
+of a system, and in order to be predictable, a phenomenon must exhibit regularity
+in its behavior. Many probability models in engineering are based on the fact
+that averages obtained in long sequences of repetitions (trials) of random experiments
+consistently yield approximately the same value. This property is called
+statistical regularity.
+Suppose that the above urn experiment is repeated n times under identical conditions.
+Let and be the number of times in which the outcomes are
+balls 0, 1, and 2, respectively, and let the relative frequency of outcome k be defined by
+(1.1)
+By statistical regularity we mean that varies less and less about a constant value
+as n is made large, that is,
+(1.2)
+The constant is called the probability of the outcome k. Equation (1.2) states that
+the probability of an outcome is the long-term proportion of times it arises in a long sequence
+of trials.We will see throughout the book that Eq. (1.2) provides the key connection
+in going from the measurement of physical quantities to the probability
+models discussed in this book.
+Figures 1.3 and 1.4 show the relative frequencies for the three outcomes in the
+above urn experiment as the number of trials n is increased. It is clear that all the relative
+frequencies are converging to the value 1/3.This is in agreement with our intuition that
+the three outcomes are equiprobable.
+Suppose we alter the above urn experiment by placing in the urn a fourth identical
+ball with the number 0.The probability of the outcome 0 is now 2/4 since two of the
+four balls in the urn have the number 0. The probabilities of the outcomes 1 and 2
+would be reduced to 1/4 each.This demonstrates a key property of probability models,
+namely, the conditions under which a random experiment is performed determine the
+probabilities of the outcomes of an experiment.
+
+1.3.2 Properties of Relative Frequency
+We now present several properties of relative frequency. Suppose that a random experiment
+has K possible outcomes, that is, Since the number of occurrences
+of any outcome in n trials is a number between zero and n, we have that
+and thus dividing the above equation by n, we find that the relative frequencies are a
+number between zero and one:
+(1.3)
+The sum of the number of occurrences of all possible outcomes must be n:
+If we divide both sides of the above equation by n, we find that the sum of all the relative
+frequencies equals one:
+(1.4)
+Sometimes we are interested in the occurrence of events associated with the outcomes
+of an experiment. For example, consider the event ¡°an even-numbered ball is selected¡±
+in the above urn experiment.What is the relative frequency of this event? The
+event will occur whenever the number of the ball is 0 or 2.The number of experiments
+in which the outcome is an even-numbered ball is therefore
+The relative frequency of the event is thus
+This example shows that the relative frequency of an event is the sum of the relative
+frequencies of the associated outcomes. More generally, let C be the event ¡°A or B occurs,¡±
+where A and B are two events that cannot occur simultaneously, then the number
+of times when C occurs is so
+(1.5)
+Equations (1.3), (1.4), and (1.5) are the three basic properties of relative frequency
+from which we can derive many other useful results.
+
+1.3.3 The Axiomatic Approach to a Theory of Probability
+Equation (1.2) suggests that we define the probability of an event by its long-term relative
+frequency.There are problems with using this definition of probability to develop
+a mathematical theory of probability. First of all, it is not clear when and in what mathematical
+sense the limit in Eq. (1.2) exists. Second, we can never perform an experiment
+an infinite number of times, so we can never know the probabilities exactly.
+Finally, the use of relative frequency to define probability would rule out the applicability
+of probability theory to situations in which an experiment cannot be repeated.
+Thus it makes practical sense to develop a mathematical theory of probability that is
+not tied to any particular application or to any particular notion of what probability
+means. On the other hand, we must insist that, when appropriate, the theory should
+allow us to use our intuition and interpret probability as relative frequency.
+In order to be consistent with the relative frequency interpretation, any definition
+of ¡°probability of an event¡± must satisfy the properties in Eqs. (1.3) through (1.5). The
+modern theory of probability begins with a construction of a set of axioms that specify
+that probability assignments must satisfy these properties. It supposes that: (1) a random
+experiment has been defined, and a set S of all possible outcomes has been identified;
+(2) a class of subsets of S called events has been specified; and (3) each event A has
+been assigned a number, P[A], in such a way that the following axioms are satisfied:
+The correspondence between the three axioms and the properties of relative frequency
+stated in Eqs. (1.3) through (1.5) is apparent.These three axioms lead to many useful
+and powerful results. Indeed, we will spend the remainder of this book developing
+many of these results.
+Note that the theory of probability does not concern itself with how the probabilities
+are obtained or with what they mean. Any assignment of probabilities to events
+that satisfies the above axioms is legitimate. It is up to the user of the theory, the model
+builder, to determine what the probability assignment should be and what interpretation
+of probability makes sense in any given application.
+
+1.3.4 Building a Probability Model
+Let us consider how we proceed from a real-world problem that involves randomness
+to a probability model for the problem. The theory requires that we identify the elements
+in the above axioms.This involves (1) defining the random experiment inherent
+in the application, (2) specifying the set S of all possible outcomes and the events of interest,
+and (3) specifying a probability assignment from which the probabilities of all
+events of interest can be computed.The challenge is to develop the simplest model that
+explains all the relevant aspects of the real-world problem.
+As an example, suppose that we test a telephone conversation to determine
+whether a speaker is currently speaking or silent.We know that on the average the
+typical speaker is active only 1/3 of the time; the rest of the time he is listening to the
+P[A or B] =P[A] + P[B].
+
+Section 1.4 A Detailed Example: A Packet Voice Transmission System 9
+other party or pausing between words and phrases.We can model this physical situation
+as an urn experiment in which we select a ball from an urn containing two white
+balls (silence) and one black ball (active speech).We are making a great simplification
+here; not all speakers are the same, not all languages have the same silence-activity
+behavior, and so forth. The usefulness and power of this simplification becomes apparent
+when we begin asking questions that arise in system design, such as:What is
+the probability that more than 24 speakers out of 48 independent speakers are active
+at the same time? This question is equivalent to: What is the probability that more
+than 24 black balls are selected in 48 independent repetitions of the above urn experiment?
+By the end of Chapter 2 you will be able to answer the latter question and all
+the real-world problems that can be reduced to it!
+
+1.4 A DETAILED EXAMPLE: A PACKET VOICE TRANSMISSION SYSTEM
+In the beginning of this chapter we claimed that probability models provide a tool that
+enables the designer to successfully design systems that must operate in a random environment,
+but that nevertheless are efficient, reliable, and cost effective. In this section,
+we present a detailed example of such a system. Our objective here is to convince
+you of the power and usefulness of probability theory. The presentation intentionally
+draws upon your intuition. Many of the derivation steps that may appear nonrigorous
+now will be made precise later in the book.
+Suppose that a communication system is required to transmit 48 simultaneous
+conversations from site A to site B using ¡°packets¡± of voice information.The speech of
+each speaker is converted into voltage waveforms that are first digitized (i.e., converted
+into a sequence of binary numbers) and then bundled into packets of information
+that correspond to 10-millisecond (ms) segments of speech. A source and destination
+address is appended to each voice packet before it is transmitted (see Fig. 1.5).
+The simplest design for the communication system would transmit 48 packets
+every 10 ms in each direction. This is an inefficient design, however, since it is known
+that on the average about 2/3 of all packets contain silence and hence no speech information.
+In other words, on the average the 48 speakers only produce about
+active (nonsilence) packets per 10-ms period.We therefore consider another system
+that transmits only packets every 10 ms.
+Every 10 ms, the new system determines which speakers have produced packets
+with active speech. Let the outcome of this random experiment be A, the number of active
+packets produced in a given 10-ms segment. The quantity A takes on values in the
+range from 0 (all speakers silent) to 48 (all speakers active). If then all the active
+packets are transmitted. However, if then the system is unable to transmit all
+the active packets, so of the active packets are selected at random and discarded.
+The discarding of active packets results in the loss of speech, so we would like to keep the
+fraction of discarded active packets at a level that the speakers do not find objectionable.
+First consider the relative frequencies of A. Suppose the above experiment is repeated
+n times. Let A( j) be the outcome in the jth trial. Let be the number of trials
+in which the number of active packets is k.The relative frequency of the outcome k in the
+first n trials is then which we suppose converges to a probability
+lim (1.6)
+In Chapter 2 we will derive the probability that k speakers are active. Figure 1.6
+shows versus k. It can be seen that the most frequent number of active speakers is 16
+and that the number of active speakers is seldom above 24 or so.
+Next consider the rate at which active packets are produced.The average number
+of active packets produced per 10-ms interval is given by the sample mean of the number
+of active packets:
+(1.7)
+(1.8)
+The first expression adds the number of active packets produced in the first n trials in the
+order in which the observations were recorded.The second expression counts how many
+of these observations had k active packets for each possible value of k, and then computes
+the total.1 As n gets large, the ratio in the second expression approaches
+Thus the average number of active packets produced per 10-ms segment approaches
+The expression on the right-hand side will be defined as the expected value of A in
+Section 3.3. E[A] is completely determined by the probabilities and in Chapter 3 we
+will show that Equation (1.9) states that the long-term average
+number of active packets produced per 10-ms period is speakers per 10 ms.
+The information provided by the probabilities allows us to design systems that
+are efficient and that provide good voice quality. For example, we can reduce the transmission
+capacity in half to 24 packets per 10-ms period, while discarding an imperceptible
+number of active packets.
+Let us summarize what we have done in this section.We have presented an example
+in which the system behavior is intrinsically random, and in which the system
+performance measures are stated in terms of long-term averages.We have shown how
+these long-term measures lead to expressions involving the probabilities of the various
+outcomes. Finally we have indicated that, in some cases, probability theory allows us to
+derive these probabilities.We are then able to predict the long-term averages of various
+quantities of interest and proceed with the system design.
+
+1.5 OTHER EXAMPLES
+In this section we present further examples from electrical and computer engineering,
+where probability models are used to design systems that work in a random environment.
+Our intention here is to show how probabilities and long-term averages arise
+naturally as performance measures in many systems.We hasten to add, however, that
+this book is intended to present the basic concepts of probability theory and not detailed
+applications. For the interested reader, references for further reading are provided
+at the end of this and other chapters.
+
+1.5.1 Communication over Unreliable Channels
+Many communication systems operate in the following way. Every T seconds, the
+transmitter accepts a binary input, namely, a 0 or a 1, and transmits a corresponding signal.
+At the end of the T seconds, the receiver makes a decision as to what the input was,
+based on the signal it has received. Most communications systems are unreliable in the
+sense that the decision of the receiver is not always the same as the transmitter input.
+Figure 1.7(a) models systems in which transmission errors occur at random with probability
+As indicated in the figure, the output is not equal to the input with probability
+Thus is the long-term proportion of bits delivered in error by the receiver. In
+situations where this error rate is not acceptable, error-control techniques are introduced
+to reduce the error rate in the delivered information.
+One method of reducing the error rate in the delivered information is to use
+error-correcting codes as shown in Fig. 1.7(b). As a simple example, consider a repetition
+code where each information bit is transmitted three times:
+If we suppose that the decoder makes a decision on the information bit by taking a majority
+vote of the three bits output by the receiver, then the decoder will make the
+wrong decision only if two or three of the bits are in error. In Example 2.37, we show
+that this occurs with probability Thus if the bit error rate of the channel
+without coding is then the delivered bit error with the above simple code will be
+3 * 10-6, a reduction of three orders of magnitude! This improvement is obtained at a
+cost, however: The rate of transmission of information has been slowed down to 1 bit
+every 3T seconds. By going to longer, more complicated codes, it is possible to obtain
+reductions in error rate without the drastic reduction in transmission rate of this simple
+example.
+Error detection and correction methods play a key role in making reliable
+communications possible over radio and other noisy channels. Probability plays a
+role in determining the error patterns that are likely to occur and that hence must
+be corrected.
+
+1.5.2 Compression of Signals
+The outcome of a random experiment need not be a single number, but can also be an
+entire function of time. For example, the outcome of an experiment could be a voltage
+waveform corresponding to speech or music. In these situations we are interested in
+the properties of a signal and of processed versions of the signal.
+For example, suppose we are interested in compressing a music signal S(t). This
+involves representing the signal by a sequence of bits. Compression techniques provide
+efficient representations by using prediction, where the next value of the signal is predicted
+using past encoded values. Only the error in the prediction needs to be encoded
+so the number of bits can be reduced.
+In order to work, prediction systems require that we know how the signal values
+are correlated with each other. Given this correlation structure we can then design optimum
+prediction systems. Probability plays a key role in solving these problems. Compression
+systems have been highly successful and are found in cell phones, digital
+cameras, and camcorders.
+
+1.5.3 Reliability of Systems
+Reliability is a major concern in the design of modern systems.A prime example is the
+system of computers and communication networks that support the electronic transfer
+of funds between banks. It is of critical importance that this system continues operating
+even in the face of subsystem failures.The key question is, How does one build reliable
+systems from unreliable components? Probability models provide us with the tools to
+address this question in a quantitative way.
+The operation of a system requires the operation of some or all of its components.
+For example, Fig. 1.8(a) shows a system that functions only when all of its components
+are functioning, and Fig. 1.8(b) shows a system that functions as long as at least
+one of its components is functioning. More complex systems can be obtained as combinations
+of these two basic configurations.
+We all know from experience that it is not possible to predict exactly when a
+component will fail. Probability theory allows us to evaluate measures of reliability
+such as the average time to failure and the probability that a component is still functioning
+after a certain time has elapsed. Furthermore, we will see in Chapters 2 and 4
+that probability theory enables us to determine these averages and probabilities for an
+entire system in terms of the probabilities and averages of its components.This allows
+LeGaCh01v4.qxd 11/30/07 3:07 PM Page 13
+14 Chapter 1 Probability Models in Electrical and Computer Engineering
+us to evaluate system configurations in terms of their reliability, and thus to select system
+designs that are reliable.
